@@ -4,7 +4,6 @@ import './App.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 
 import Navbar from './components/navbar'
-import Menu from './components/about'
 import About from './components/about'
 import Blog from './components/blog'
 import Project from './components/project'
@@ -28,7 +27,6 @@ class App extends Component {
     return (
       <div>
             <Navbar/>
-            <Menu />
             <About />
             <Blog />
             <Project />
