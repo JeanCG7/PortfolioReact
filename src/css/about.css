@@ -1,0 +1,26 @@
+.about{
+}
+
+#about p{
+    margin: 5%;
+    font-size: 1.7rem
+}
+
+#about img{
+    margin-left:5%;
+    margin-bottom: 15px;
+}
+
+#about h2{
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.info{
+    display:flex;
+    flex-wrap: wrap;
+}
+
+#about .button{
+    margin-left:18%
+}

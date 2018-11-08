@@ -1,0 +1,24 @@
+#blog .title{
+    font-size: 3rem;
+}
+
+#blog .subTitle{
+    font-size: 1.5rem;
+}
+
+.blog{
+    padding: 3%;
+    margin: 5%;
+}
+
+.row{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+#blog h2{
+    text-align: center;
+    margin-bottom: 15px;
+}
