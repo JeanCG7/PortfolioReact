@@ -29,7 +29,7 @@ export default class About extends Component {
                     <Col lg={1} md={2} sm={3} xs={4}><Image src={require('../imgs/angular.png')}></Image></Col>
                     <Col lg={1} md={2} sm={3} xs={4}><Image src={require('../imgs/react.png')}></Image></Col>
                     <Col lg={1} md={2} sm={3} xs={4}><Image src={require('../imgs/fireBase.png')}></Image></Col>
-                    <Col lg={1} md={2} sm={3} xs={4}><Image src={require('../imgs/mySql.png')}></Image></Col>
+                    <Col lg={1} md={2} sm={3} xs={4}><Image src={require('../imgs/mysql.png')}></Image></Col>
                     <Col lg={1} md={2} sm={3} xs={4}><Image src={require('../imgs/mongo.png')}></Image></Col>
                     <Col lg={1} md={2} sm={3} xs={4}><Image src={require('../imgs/java.png')}></Image></Col>
                     <Col lg={1} md={2} sm={3} xs={4}><Image src={require('../imgs/cSharp.png')}></Image></Col>
