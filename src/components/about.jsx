@@ -5,10 +5,10 @@ export default class About extends Component {
 
     render() {
         return (
-            <section id='about' className='container about'>
+            <section id='about' className='container'>
                 <Row>
                     <Col lg={3} md={3} sm={3} xs={12}>
-                        <Image src={require('../imgs/eu.jpg')} circle width={200}></Image>
+                        <Image src={require('../imgs/eu.jpg')} circle width={200} className='image'></Image>
                         <Button className='button' href={require('../files/jeanCurriculo.pdf')} target='_blank' download>Baixar Currículo</Button>
 
                     </Col>
