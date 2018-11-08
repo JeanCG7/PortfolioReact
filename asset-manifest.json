@@ -9,7 +9,7 @@
   "runtime~main.js.map": "/PortfolioReact/static/js/runtime~main.471dbb99.js.map",
   "static/media/progress.png": "/PortfolioReact/static/media/progress.73216bf6.png",
   "static/media/logo.svg": "/PortfolioReact/static/media/logo.5d5d9eef.svg",
-  "static/media/bootstrap.min.css": "/PortfolioReact/static/media/glyphicons-halflings-regular.f4769f9b.eot",
+  "static/media/bootstrap.min.css": "/PortfolioReact/static/media/glyphicons-halflings-regular.448c34a5.woff2",
   "static/media/eu.jpg": "/PortfolioReact/static/media/eu.866e631e.jpg",
   "static/media/jeanCurriculo.pdf": "/PortfolioReact/static/media/jeanCurriculo.69273c12.pdf",
   "static/media/blog1.png": "/PortfolioReact/static/media/blog1.a7c3b2a9.png",
@@ -22,6 +22,6 @@
   "static/css/main.864377bd.chunk.css.map": "/PortfolioReact/static/css/main.864377bd.chunk.css.map",
   "static/css/1.74bb3059.chunk.css.map": "/PortfolioReact/static/css/1.74bb3059.chunk.css.map",
   "index.html": "/PortfolioReact/index.html",
-  "precache-manifest.db7f3b5c3b68ecda98597a0b1a160616.js": "/PortfolioReact/precache-manifest.db7f3b5c3b68ecda98597a0b1a160616.js",
+  "precache-manifest.107c0f73e8e163ed7e76029b5d505430.js": "/PortfolioReact/precache-manifest.107c0f73e8e163ed7e76029b5d505430.js",
   "service-worker.js": "/PortfolioReact/service-worker.js"
 }
