@@ -24,10 +24,6 @@ self.__precacheManifest = [
     "url": "/PortfolioReact/static/media/logo.5d5d9eef.svg"
   },
   {
-    "revision": "448c34a56d699c29117adc64c43affeb",
-    "url": "/PortfolioReact/static/media/glyphicons-halflings-regular.448c34a5.woff2"
-  },
-  {
     "revision": "f4769f9bdb7466be65088239c12046d1",
     "url": "/PortfolioReact/static/media/glyphicons-halflings-regular.f4769f9b.eot"
   },
@@ -36,12 +32,16 @@ self.__precacheManifest = [
     "url": "/PortfolioReact/static/media/glyphicons-halflings-regular.fa277232.woff"
   },
   {
-    "revision": "89889688147bd7575d6327160d64e760",
-    "url": "/PortfolioReact/static/media/glyphicons-halflings-regular.89889688.svg"
+    "revision": "448c34a56d699c29117adc64c43affeb",
+    "url": "/PortfolioReact/static/media/glyphicons-halflings-regular.448c34a5.woff2"
   },
   {
     "revision": "e18bbf611f2a2e43afc071aa2f4e1512",
     "url": "/PortfolioReact/static/media/glyphicons-halflings-regular.e18bbf61.ttf"
+  },
+  {
+    "revision": "89889688147bd7575d6327160d64e760",
+    "url": "/PortfolioReact/static/media/glyphicons-halflings-regular.89889688.svg"
   },
   {
     "revision": "3bdd7f94b7e7e372cf5b",
@@ -84,7 +84,7 @@ self.__precacheManifest = [
     "url": "/PortfolioReact/static/css/1.74bb3059.chunk.css"
   },
   {
-    "revision": "21592a6ebe2680d344f02ee0fc14266e",
+    "revision": "0019491125d9c6812f443e76e580cb90",
     "url": "/PortfolioReact/index.html"
   }
 ];
