@@ -1,16 +1,40 @@
 import React, { Component } from 'react'
 import { Image, Row, Col, Button } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+
+import axios from 'axios'
+
+
+const URL = 'http://localhost:3003/api/about'
 
 export default class About extends Component {
+    constructor(props) {
+        super(props);
+        this.state = this.getAbout();
+        this.getAbout = this.getAbout.bind(this);    
+    }
+
+    getAbout() {
+        var self = this;
+        axios.get(URL)
+            .then(resp => {
+                self.setState(resp.data);
+        })
+    }
+
+    createUI() {
+    
+    }
+
 
     render() {
         return (
             <section id='about' className='container'>
+                { this.createUI() }
                 <Row>
                     <Col lg={3} md={3} sm={3} xs={12}>
                         <Image src={require('../imgs/eu.jpg')} circle width={200} className='image'></Image>
                         <Button className='button' href={require('../files/jeanCurriculo.pdf')} target='_blank' download>Baixar Currículo</Button>
-
                     </Col>
                     <Col lg={9} md={9} sm={9} xs={12}>
                         <p className='about'>
@@ -36,7 +60,7 @@ export default class About extends Component {
                     <Col lg={1} md={2} sm={3} xs={4}><Image src={require('../imgs/dotNet.png')}></Image></Col>
                     <Col lg={1} md={2} sm={3} xs={4}><Image src={require('../imgs/sqlServer.png')}></Image></Col>
                 </Row>
-                <Row className='info'>
+                <Row className='info'>s
                     <Col lg={3} md={3} sm={6} xs={12}>
                         <h3>
                             Interesses

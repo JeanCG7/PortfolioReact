@@ -21,6 +21,7 @@ import './css/blog.css'
 import './css/project.css'
 import './css/biography.css'
 import './css/form.css'
+import routes from './routes';
 
 class App extends Component {
   render() {
@@ -33,6 +34,7 @@ class App extends Component {
             <Biography />
             <Form />
             <Footer />
+            <Routes/>
       </div>
     );
   }
