@@ -108,7 +108,7 @@ class App extends Component {
             <Project project={this.state.project}/>
             <Biography biography={this.state.biography}/>
             <Form />
-            <Footer />
+            <Footer footer={this.state.footer}/>
       </div>
     );
   }

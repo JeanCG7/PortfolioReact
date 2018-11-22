@@ -4,7 +4,7 @@ import { Label, Input } from 'reactstrap'
 import styled from 'styled-components'
 import { withRR4, Nav, NavIcon } from 'react-sidenav';
 import Axios from 'axios';
-
+import { storage } from '../config/Fire'
 const URL = 'http://localhost:3003/api/footer'
 
 
@@ -17,12 +17,17 @@ export default class FooterAdd extends Component {
             phone: '',
             icons: [{
                 src: '',
-                link: '',
+                link: ''
             }]
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.getFooter = this.getFooter.bind(this);
+        this.handleImageChange = this.handleChange.bind(this);
         this.getFooter();
+    }
+
+    fileSelectedHandler(event) {
+        console.log(event);
     }
 
     addClick(stateItem) {
@@ -37,7 +42,7 @@ export default class FooterAdd extends Component {
                 <Label for="lblContent">Link</Label>
                 <Input placeholder='Item' name='link' value={el.link || ''} onChange={this.handleChange.bind(this, i, stateItem)} />
                 <Label for="lblContent">Imagem/Ícone</Label>
-                <Input placeholder='Item' name='src' value={el.src || ''} onChange={this.handleChange.bind(this, i, stateItem)} />
+                <Input name='src' value={el.src || ''} onChange={this.handleChange.bind(this, i, stateItem)} />
                 <Button type='button' value='remove' onClick={this.removeClick.bind(this, i, stateItem)}>Remover Item</Button>
             </FormGroup>
         ))
@@ -59,8 +64,10 @@ export default class FooterAdd extends Component {
             itens[i].link = value;
         else
             itens[i].src = value;
+        debugger;
         this.setState({ icons: itens })
     }
+
 
     handleChangeSingle(e) {
         this.setState({ ...this.state, [e.target.name]: e.target.value })
@@ -73,7 +80,23 @@ export default class FooterAdd extends Component {
     }
 
     handleSubmit(event) {
-        var me = this;
+         var me = this;
+        // var icons = me.icons;
+        // icons.map((item, i) => {
+        //     const uploadImg = storage.ref(`images/${item.src.name}`).put(item.src);
+        //     uploadImg.on('state_changed',
+        //         (snapshot) => {
+        //             //progress
+        //         }, (error) => {
+        //             console.log(error);
+        //         }, () => {
+        //             //complete
+        //             storage.ref('images').child(item.src.name).getDownloadURL().then(url => {
+        //                 debugger;
+        //                 item.src = url;
+        //             })
+        //         });
+        // });
         const footer = me.state;
         if (me.state._id == undefined)
             Axios.post(URL, footer)

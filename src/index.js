@@ -11,6 +11,7 @@ import FooterAdd from './api-components/footerAdd';
 
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
+
 ReactDOM.render(
     <BrowserRouter>
         <div>
@@ -21,6 +22,7 @@ ReactDOM.render(
             <Route path="/projectAdd" render={()=><HomeAdd link='projectAdd'/>} />
             <Route path="/biographyAdd" render={()=><HomeAdd link='biographyAdd'/>} />
             <Route path="/footerAdd" render={()=><HomeAdd link='footerAdd'/>} />
+            <Route exact path="/" component={App}/>
         </div>
     </BrowserRouter>,
     document.getElementById('root'));

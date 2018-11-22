@@ -64,11 +64,6 @@ class HomeAdd extends Component {
                     <div>
                         <SideMenu />
                         {this.renderComponents()}
-                        {/* <AboutAdd /> */}
-                        {/* <BlogAdd /> */}
-                        {/* <ProjectAdd /> */}
-                        {/* <BiographyAdd /> */}
-                        {/* <FooterAdd/> */}
                         <Row>
                             <Button bsStyle='danger' onClick={this.logout}>Logout</Button>
                         </Row>
