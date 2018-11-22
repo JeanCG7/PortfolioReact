@@ -4,7 +4,6 @@ import { Label, Input } from 'reactstrap'
 import styled from 'styled-components'
 import { withRR4, Nav, NavIcon } from 'react-sidenav';
 import Axios from 'axios';
-import SideMenu from './sideNav'
 
 const URL = 'http://localhost:3003/api/footer'
 
@@ -95,34 +94,31 @@ export default class FooterAdd extends Component {
 
     render() {
         return (
-            <div>
-                <SideMenu/>
-                <div className='container'>
-                    <Form onSubmit={this.handleSubmit}>
-                        <Col lg={9} md={9} sm={12} xs={12}>
-                            <FormGroup>
-                                <Label>Nome</Label>
-                                <Input name='name' placeholder='Digite seu nome' value={this.state.name || ''} onChange={this.handleChangeSingle.bind(this)} />
-                            </FormGroup>
-                            <FormGroup>
-                                <Label>E-mail</Label>
-                                <Input name='email' type='email' placeholder='Digite seu e-mail' value={this.state.email || ''} onChange={this.handleChangeSingle.bind(this)} />
-                            </FormGroup>
-                            <FormGroup>
-                                <Label>Telefone</Label>
-                                <Input name='phone' placeholder='Digite seu telefone de contato' value={this.state.phone || ''} onChange={this.handleChangeSingle.bind(this)} />
-                            </FormGroup>
-                        </Col>
-                        <Col lg={3} md={3} sm={12} xs={12}>
-                            <Label for="lblContent">Redes sociais</Label>
-                            {this.createUI(this.state.icons)}
-                            <FormGroup>
-                                <Button type='button' onClick={this.addClick.bind(this, this.state.icons)}>Adicionar item</Button>
-                            </FormGroup>
-                        </Col>
-                        <Button type='submit'>Salvar</Button>
-                    </Form>
-                </div>
+            <div className='container'>
+                <Form onSubmit={this.handleSubmit}>
+                    <Col lg={9} md={9} sm={12} xs={12}>
+                        <FormGroup>
+                            <Label>Nome</Label>
+                            <Input name='name' placeholder='Digite seu nome' value={this.state.name || ''} onChange={this.handleChangeSingle.bind(this)} />
+                        </FormGroup>
+                        <FormGroup>
+                            <Label>E-mail</Label>
+                            <Input name='email' type='email' placeholder='Digite seu e-mail' value={this.state.email || ''} onChange={this.handleChangeSingle.bind(this)} />
+                        </FormGroup>
+                        <FormGroup>
+                            <Label>Telefone</Label>
+                            <Input name='phone' placeholder='Digite seu telefone de contato' value={this.state.phone || ''} onChange={this.handleChangeSingle.bind(this)} />
+                        </FormGroup>
+                    </Col>
+                    <Col lg={3} md={3} sm={12} xs={12}>
+                        <Label for="lblContent">Redes sociais</Label>
+                        {this.createUI(this.state.icons)}
+                        <FormGroup>
+                            <Button type='button' onClick={this.addClick.bind(this, this.state.icons)}>Adicionar item</Button>
+                        </FormGroup>
+                    </Col>
+                    <Button type='submit'>Salvar</Button>
+                </Form>
             </div>
         )
     }

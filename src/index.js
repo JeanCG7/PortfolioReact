@@ -14,14 +14,13 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 ReactDOM.render(
     <BrowserRouter>
         <div>
-            <Route path="/" component={App} />
             <Route path="/about" component={App} />
-            <Route path="/crud" component={AboutAdd} />
-            <Route path="/aboutAdd" component={AboutAdd} />
-            <Route path="/blogAdd" component={BlogAdd} />
-            <Route path="/projectAdd" component={ProjectAdd} />
-            <Route path="/biographyAdd" component={BiographyAdd} />
-            <Route path="/footerAdd" component={FooterAdd} />
+            <Route path="/crud" component={HomeAdd} />
+            <Route path="/aboutAdd" render={()=><HomeAdd link='aboutAdd'/>} />
+            <Route path="/blogAdd" render={()=><HomeAdd link='blogAdd'/>} />
+            <Route path="/projectAdd" render={()=><HomeAdd link='projectAdd'/>} />
+            <Route path="/biographyAdd" render={()=><HomeAdd link='biographyAdd'/>} />
+            <Route path="/footerAdd" render={()=><HomeAdd link='footerAdd'/>} />
         </div>
     </BrowserRouter>,
     document.getElementById('root'));

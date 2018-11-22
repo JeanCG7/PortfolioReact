@@ -4,7 +4,6 @@ import { Label, Input } from 'reactstrap'
 import styled from 'styled-components'
 import { withRR4, Nav, NavIcon } from 'react-sidenav';
 import Axios from 'axios';
-import SideMenu from './sideNav'
 
 const URL = 'http://localhost:3003/api/about'
 
@@ -92,45 +91,42 @@ export default class AboutAdd extends Component {
 
     render() {
         return (
-            <div>
-                <SideMenu />
-                <div className='container'>
-                    <Form onSubmit={this.handleSubmit}>
+            <div className='container'>
+                <Form onSubmit={this.handleSubmit}>
+                    <FormGroup>
+                        <Label>Texto - Sobre mim</Label>
+                        <Input id='txtAbout' componentClass='textarea' placeholder='Digite um resumo sobre você' value={this.state.aboutDesc || ''} onChange={this.handleChangeAbout.bind(this)} />
+                    </FormGroup>
+                    <Col lg={3} md={3} sm={12} xs={12}>
+                        <Label for="lblContent">Interesse</Label>
+                        {this.createUI(this.state.interest, 'interest')}
                         <FormGroup>
-                            <Label>Texto - Sobre mim</Label>
-                            <Input id='txtAbout' componentClass='textarea' placeholder='Digite um resumo sobre você' value={this.state.aboutDesc || ''} onChange={this.handleChangeAbout.bind(this)} />
+                            <Button type='button' onClick={this.addClick.bind(this, this.state.interest, 'interest')}>Adicionar item</Button>
                         </FormGroup>
-                        <Col lg={3} md={3} sm={12} xs={12}>
-                            <Label for="lblContent">Interesse</Label>
-                            {this.createUI(this.state.interest, 'interest')}
-                            <FormGroup>
-                                <Button type='button' onClick={this.addClick.bind(this, this.state.interest, 'interest')}>Adicionar item</Button>
-                            </FormGroup>
-                        </Col>
-                        <Col lg={3} md={3} sm={12} xs={12}>
-                            <Label for="lblContent">Línguas</Label>
-                            {this.createUI(this.state.language, 'language')}
-                            <FormGroup>
-                                <Button type='button' onClick={this.addClick.bind(this, this.state.language, 'language')}>Adicionar item</Button>
-                            </FormGroup>
-                        </Col>
-                        <Col lg={3} md={3} sm={12} xs={12}>
-                            <Label for="lblContent">Formação</Label>
-                            {this.createUI(this.state.education, 'education')}
-                            <FormGroup>
-                                <Button type='button' onClick={this.addClick.bind(this, this.state.education, 'education')}>Adicionar item</Button>
-                            </FormGroup>
-                        </Col>
-                        <Col lg={3} md={3} sm={12} xs={12}>
-                            <Label for="lblContent">Atividades Desenvolvidas</Label>
-                            {this.createUI(this.state.activities, 'activities')}
-                            <FormGroup>
-                                <Button type='button' onClick={this.addClick.bind(this, this.state.activities, 'activities')}>Adicionar item</Button>
-                            </FormGroup>
-                        </Col>
-                        <Button type='submit'>Salvar</Button>
-                    </Form>
-                </div>
+                    </Col>
+                    <Col lg={3} md={3} sm={12} xs={12}>
+                        <Label for="lblContent">Línguas</Label>
+                        {this.createUI(this.state.language, 'language')}
+                        <FormGroup>
+                            <Button type='button' onClick={this.addClick.bind(this, this.state.language, 'language')}>Adicionar item</Button>
+                        </FormGroup>
+                    </Col>
+                    <Col lg={3} md={3} sm={12} xs={12}>
+                        <Label for="lblContent">Formação</Label>
+                        {this.createUI(this.state.education, 'education')}
+                        <FormGroup>
+                            <Button type='button' onClick={this.addClick.bind(this, this.state.education, 'education')}>Adicionar item</Button>
+                        </FormGroup>
+                    </Col>
+                    <Col lg={3} md={3} sm={12} xs={12}>
+                        <Label for="lblContent">Atividades Desenvolvidas</Label>
+                        {this.createUI(this.state.activities, 'activities')}
+                        <FormGroup>
+                            <Button type='button' onClick={this.addClick.bind(this, this.state.activities, 'activities')}>Adicionar item</Button>
+                        </FormGroup>
+                    </Col>
+                    <Button type='submit'>Salvar</Button>
+                </Form>
             </div>
         )
     }

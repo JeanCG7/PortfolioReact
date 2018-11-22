@@ -4,7 +4,6 @@ import { Label, Input } from 'reactstrap'
 import styled from 'styled-components'
 import { withRR4, Nav, NavIcon } from 'react-sidenav';
 import Axios from 'axios';
-import SideMenu from './sideNav';
 
 const URL = 'http://localhost:3003/api/project'
 
@@ -94,18 +93,15 @@ export default class ProjectAdd extends Component {
 
     render() {
         return (
-            <div>
-                <SideMenu />
-                <div className='container'>
-                    <Form onSubmit={this.handleSubmit}>
-                        {this.createUI(this.state.projectItem)}
+            <div className='container'>
+                <Form onSubmit={this.handleSubmit}>
+                    {this.createUI(this.state.projectItem)}
 
-                        <FormGroup>
-                            <Button type='button' onClick={this.addClick.bind(this)}>Adicionar item</Button>
-                        </FormGroup>
-                        <Button type='submit'>Salvar</Button>
-                    </Form>
-                </div>
+                    <FormGroup>
+                        <Button type='button' onClick={this.addClick.bind(this)}>Adicionar item</Button>
+                    </FormGroup>
+                    <Button type='submit'>Salvar</Button>
+                </Form>
             </div>
         )
     }

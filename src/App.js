@@ -24,6 +24,7 @@ import './css/form.css'
 import routes from './routes';
 import Axios from 'axios';
 
+
 const url = 'http://localhost:3003/api/'
 
 class App extends Component {
@@ -108,7 +109,6 @@ class App extends Component {
             <Biography biography={this.state.biography}/>
             <Form />
             <Footer />
-            <Routes/>
       </div>
     );
   }

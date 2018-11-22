@@ -10,7 +10,7 @@ const URL = 'http://localhost:3003/api/about'
 export default class About extends Component {
     constructor(props) {
         super(props);
-
+        debugger;
     }
 
     render() {
