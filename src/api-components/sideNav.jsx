@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Nav, Navbar, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
-import { withRouter } from 'react-router-dom';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom'
+
 export default class Menu extends Component {
   render() {
     return (
@@ -9,26 +9,26 @@ export default class Menu extends Component {
         <Navbar inverse collapseOnSelect>
           <Navbar.Header>
             <Navbar.Brand>
-              <a href="#about">Jean Carlos - ADMIN Profile</a>
+              <Link to="/aboutAdd">Jean Carlos - ADMIN Profile</Link>
             </Navbar.Brand>
             <Navbar.Toggle />
           </Navbar.Header>
           <Navbar.Collapse>
             <Nav>
-              <NavItem eventKey={1}>
+              <NavItem>
                 <Link to='/aboutAdd'>Sobre</Link>
               </NavItem>
-              <NavItem eventKey={2}>
+              <NavItem>
                 <Link to='/blogAdd'>Blog</Link>
               </NavItem>
-              <NavItem eventKey={3} href="#projects">
-                Projetos
+              <NavItem>
+                <Link to='/projectAdd'>Projeto</Link>
               </NavItem>
-              <NavItem eventKey={4} href="#biography">
-                Biografia
+              <NavItem>
+                <Link to='/biographyAdd'>Biografia</Link>
               </NavItem>
-              <NavItem eventKey={5} href="#footer">
-                Rodapé
+              <NavItem>
+                <Link to='/footerAdd'>Rodapé</Link>
               </NavItem>
             </Nav>
           </Navbar.Collapse>

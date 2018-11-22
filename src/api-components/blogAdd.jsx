@@ -4,6 +4,7 @@ import { Label, Input } from 'reactstrap'
 import styled from 'styled-components'
 import { withRR4, Nav, NavIcon } from 'react-sidenav';
 import Axios from 'axios';
+import SideMenu from './sideNav';
 
 const URL = 'http://localhost:3003/api/blog'
 
@@ -72,20 +73,20 @@ export default class BlogAdd extends Component {
     removeClick(i, stateItem, e) {
         let card = [...stateItem];
         card.splice(i, 1);
-        this.setState({card})
+        this.setState({ card })
     }
     handleSubmit(event) {
         var me = this;
         const blog = me.state;
         if (me.state._id == undefined)
             Axios.post(URL, blog)
-                .then(function(){
+                .then(function () {
                     me.getBlog();
                     alert("Blog salvo com sucessso")
                 });
         else {
             Axios.put(URL + `/${me.state._id}`, blog)
-                .then(function(){
+                .then(function () {
                     me.getBlog();
                     alert("Blog atualizado com sucessso")
                 });
@@ -96,15 +97,18 @@ export default class BlogAdd extends Component {
 
     render() {
         return (
-            <div className='container'>
-                <Form onSubmit={this.handleSubmit}>
-                    {this.createUI(this.state.card)}
+            <div>
+                <SideMenu />
+                <div className='container'>
+                    <Form onSubmit={this.handleSubmit}>
+                        {this.createUI(this.state.card)}
 
-                    <FormGroup>
-                        <Button type='button' onClick={this.addClick.bind(this)}>Adicionar item</Button>
-                    </FormGroup>
-                    <Button type='submit'>Salvar</Button>
-                </Form>
+                        <FormGroup>
+                            <Button type='button' onClick={this.addClick.bind(this)}>Adicionar item</Button>
+                        </FormGroup>
+                        <Button type='submit'>Salvar</Button>
+                    </Form>
+                </div>
             </div>
         )
     }

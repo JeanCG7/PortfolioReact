@@ -6,17 +6,20 @@ import ProjectAdd from './projectAdd'
 import BiographyAdd from './biographyAdd'
 import FooterAdd from './footerAdd'
 
-import Routes from '../routes'
+
 class HomeAdd extends Component {
+    constructor(props){
+        super(props)
+    }
     render() {
         return (
             <div>
                 <SideMenu />
-                {/*<AboutAdd />*/}
+                {/* <AboutAdd /> */}
                 {/* <BlogAdd /> */}
                 {/* <ProjectAdd /> */}
-                {/* <BiographyAdd /> */}
-                <FooterAdd/>
+                <BiographyAdd />
+                {/* <FooterAdd/> */}
             </div>
         );
     }

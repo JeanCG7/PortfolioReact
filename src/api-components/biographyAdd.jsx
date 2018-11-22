@@ -4,6 +4,7 @@ import { Label, Input } from 'reactstrap'
 import styled from 'styled-components'
 import { withRR4, Nav, NavIcon } from 'react-sidenav';
 import Axios from 'axios';
+import SideMenu from './sideNav'
 
 const URL = 'http://localhost:3003/api/biography'
 
@@ -69,7 +70,7 @@ export default class BioAdd extends Component {
     removeClick(i, stateItem, e) {
         let bioItem = [...stateItem];
         bioItem.splice(i, 1);
-        this.setState({bioItem})
+        this.setState({ bioItem })
     }
 
     handleSubmit(event) {
@@ -77,13 +78,13 @@ export default class BioAdd extends Component {
         const bio = me.state;
         if (me.state._id == undefined)
             Axios.post(URL, bio)
-                .then(function(){
+                .then(function () {
                     me.getBio();
                     alert("Bio salvo com sucessso")
                 });
         else {
             Axios.put(URL + `/${me.state._id}`, bio)
-                .then(function(){
+                .then(function () {
                     me.getBio();
                     alert("Bio atualizada com sucessso")
                 });
@@ -94,15 +95,18 @@ export default class BioAdd extends Component {
 
     render() {
         return (
-            <div className='container'>
-                <Form onSubmit={this.handleSubmit}>
-                    {this.createUI(this.state.bioItem)}
+            <div>
+                <SideMenu />
+                <div className='container'>
+                    <Form onSubmit={this.handleSubmit}>
+                        {this.createUI(this.state.bioItem)}
 
-                    <FormGroup>
-                        <Button type='button' onClick={this.addClick.bind(this)}>Adicionar item</Button>
-                    </FormGroup>
-                    <Button type='submit'>Salvar</Button>
-                </Form>
+                        <FormGroup>
+                            <Button type='button' onClick={this.addClick.bind(this)}>Adicionar item</Button>
+                        </FormGroup>
+                        <Button type='submit'>Salvar</Button>
+                    </Form>
+                </div>
             </div>
         )
     }

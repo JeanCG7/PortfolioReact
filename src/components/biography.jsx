@@ -1,16 +1,24 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { Row, Col } from 'react-bootstrap'
 import Card from '../template/card'
 
-export default props => (
-    <section className='container' id='biography'>
-        <Row>
-            <Col lg={12} md={12} sm={12} xs={12}>
-                <h2>Sobre mim</h2>
-            </Col>
-        </Row>
-        <Row>
-            <Col lg={4} md={4} sm={12} xs={12}>
+
+export default class Biography extends Component {
+
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        return (
+            <section className='container' id='biography'>
+                <Row>
+                    <Col lg={12} md={12} sm={12} xs={12}>
+                        <h2>Sobre mim</h2>
+                    </Col>
+                </Row>
+                <Row>
+                    {/* <Col lg={4} md={4} sm={12} xs={12}>
                 <Card className='card biography'
                 src={require('../imgs/taruma.jpg')}
                 link='https://en.wikipedia.org/wiki/Tarum%C3%A3'
@@ -46,7 +54,23 @@ export default props => (
                     Além desse sentimento de significar, também possuo autonomia das decisões dos futuros projetos, módulos e funcionalidades e para isso preciso estar consciente dos processos da empresa que visa qualidade 
                     como um requisito básico do dia-a-dia. Nos 3 meses que estou na empresa tenho notado melhoras constantes em conhecimento técnico, gerenciamento de pequenos projetos e tarefas, além do conhecimento de diferentes normas e padrões de qualidade do processo. '>
                 </Card>
-            </Col>
-        </Row>
-    </section>
-);
+            </Col> */}
+             {this.props.biography.bioItem !== undefined && this.props.biography.bioItem.map(bio => {
+                        return (
+                            <Col lg={4} md={4} sm={12} xs={12}>
+                                <Card
+                                    className='card blog'
+                                    title={bio.title}
+                                    text={bio.text}
+                                    alt={bio.alt}
+                                    link={bio.link}
+                                    src={require(`../imgs/${bio.src}`)}>
+                                </Card>
+                            </Col>
+                        );
+                    })}
+                </Row>
+            </section>
+        )
+    }
+}

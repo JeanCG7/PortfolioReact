@@ -26,6 +26,5 @@ export default props => (
         <Route path='/blogAdd' component={BlogAdd}/>
         <Route path='/projectAdd' component={ProjectAdd}/>
         <Route path='/biographyAdd' component={BiographyAdd}/>
-
     </Router>
 )

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Nav, Navbar, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
+import { HashLink as Link } from 'react-router-hash-link';
 
 export default class Menu extends Component {
   render() {
@@ -8,26 +9,29 @@ export default class Menu extends Component {
         <Navbar inverse collapseOnSelect>
           <Navbar.Header>
             <Navbar.Brand>
-              <a href="#about">Jean Carlos</a>
+            <Link to='#about'>Jean Carlos</Link>
             </Navbar.Brand>
             <Navbar.Toggle />
           </Navbar.Header>
           <Navbar.Collapse>
             <Nav>
-              <NavItem eventKey={1} href="#about">
-                Conhecimento
+              <NavItem >
+                <Link to='#about'>Sobre</Link>
               </NavItem>
-              <NavItem eventKey={2} href="#blog">
-                Blog
+              <NavItem>
+              <Link to='#blog'>Blog</Link>
               </NavItem>
-              <NavItem eventKey={3} href="#projects">
-                Projetos
+              <NavItem>
+                <Link to="#project">Projetos</Link>
               </NavItem>
-              <NavItem eventKey={4} href="#biography">
-                Biografia
+              <NavItem>
+                <Link to="#biography">Biografia</Link>
               </NavItem>
-              <NavItem eventKey={5} href="#form">
-                Formulário
+              <NavItem>
+                <Link to="#form">Formulário</Link>
+              </NavItem>
+              <NavItem>
+                <Link to="#footer">Contato</Link>
               </NavItem>
             </Nav>
           </Navbar.Collapse>
